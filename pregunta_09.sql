@@ -38,4 +38,6 @@
 --
 --  >>> Escriba su codigo a partir de este punto <<<
 --
-SELECT * FROM tbl2 INNER JOIN ( SELECT MIN(c21) as MI FROM tbl2) as minimo ON c21 = minimo.MI
+-- SELECT * FROM tbl2 INNER JOIN ( SELECT MIN(c21) as MI FROM tbl2) as minimo ON c21 = minimo.MI
+
+SELECT * FROM tbl2 WHERE c21 = (SELECT MIN(c21) FROM tbl2)
